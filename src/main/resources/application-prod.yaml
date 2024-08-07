@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ShippingCostCalculator
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /openapi.json
+  swagger-ui:
+    path: /docs
+  show-actuator: true
+  writer-with-default-pretty-printer: true
+
+shipping:
+  cost:
+    multiplier:
+      large: ${large_parcel_cost_multiplier}
+      medium: ${medium_parcel_cost_multiplier}
+      small: ${small_parcel_cost_multiplier}
+      heavy: ${heavy_parcel_cost_multiplier}
+    threshold:
+      maxWeightLimit: ${max_weight_limit}
+      heavyParcelWeightLimit: ${heavy_weight_limit}
+      smallParcelVolumeLimit: ${small_volume_limit}
+      mediumParcelVolumeLimit: ${medium_volume_limit}
+
+voucher:
+  api:
+    endpoint: https://mynt-exam.mocklab.io/voucher/
+    key: ${voucher_api_key}

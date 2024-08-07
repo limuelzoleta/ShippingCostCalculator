@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ShippingCostCalculator
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /openapi.json
+  swagger-ui:
+    path: /docs
+  show-actuator: true
+  writer-with-default-pretty-printer: true
+
+shipping:
+  cost:
+    multiplier:
+      large: 0.05
+      medium: 0.04
+      small: 0.03
+      heavy: 20
+    threshold:
+      maxWeightLimit: 50
+      heavyParcelWeightLimit: 10
+      smallParcelVolumeLimit: 1500
+      mediumParcelVolumeLimit: 2500
+
+voucher:
+  api:
+    endpoint: https://mynt-exam.mocklab.io/voucher/
+    key: apikey
